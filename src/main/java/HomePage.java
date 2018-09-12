@@ -11,17 +11,16 @@ public class HomePage {
     @FindBy(id="hplogo")
     WebElement logo;
 
-    @FindBy(name="q")
+    @FindBy(name = "q")
     WebElement barreRecherche;
 
-    @FindBy(css =".lsb")
-    WebElement buttonRecherche;
 
+    @FindBy(css = ".lsb")
+    WebElement buttonRecherche;
 
 
     public HomePage (WebDriver driver) {
          this.driver = driver;
-        //initialisation des elements qui sont dans le driver : logo, barreRecherche, buttonRecherche
         PageFactory.initElements(driver, this);
     }
 
@@ -34,9 +33,9 @@ public class HomePage {
 
 
     public ResultsPage rechercheClick (String text) {
-        buttonRecherche.sendKeys(text);
+        barreRecherche.sendKeys(text);
         buttonRecherche.click();
-        return  new ResultsPage(driver);
+        return new ResultsPage(driver);
    }
 
 }

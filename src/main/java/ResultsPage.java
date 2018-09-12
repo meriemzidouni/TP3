@@ -1,4 +1,4 @@
-import com.google.common.collect.Lists;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -11,7 +11,8 @@ public class ResultsPage {
 
     WebDriver driver;
 
-    @FindBy(css = ".rc >.r > a")
+
+    @FindBy(css = ".rc > .r > a")
     List<WebElement> listResults;
 
 
