@@ -20,30 +20,24 @@ public class HomePage {
 
 
     public HomePage (WebDriver driver) {
-
-        this.driver = driver;
-
+         this.driver = driver;
         //initialisation des elements qui sont dans le driver : logo, barreRecherche, buttonRecherche
         PageFactory.initElements(driver, this);
-
-
     }
 
 
-    public void rechercheEntree (String text) {
-
+    public ResultsPage rechercheEntree (String text) {
         barreRecherche.sendKeys(text);
         barreRecherche.sendKeys(Keys.ENTER);
-
+        return  new ResultsPage(driver);
     }
 
 
-    public void rechercheClick (String text) {
-
+    public ResultsPage rechercheClick (String text) {
         buttonRecherche.sendKeys(text);
         buttonRecherche.click();
-
-    }
+        return  new ResultsPage(driver);
+   }
 
 }
 

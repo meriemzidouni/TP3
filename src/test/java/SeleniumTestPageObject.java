@@ -28,8 +28,7 @@ public class SeleniumTestPageObject {
     public void testEntree() {
 
         HomePage homePage = new HomePage(driver);
-        homePage.rechercheEntree("bordeaux");
-        ResultsPage resultPage = new ResultsPage(driver);
+        ResultsPage resultPage = homePage.rechercheEntree("bordeaux");
         String result = resultPage.getResults(0);
         Assert.assertThat(result, is("Site officiel de la ville de Bordeaux | Bordeaux"));
     }
@@ -37,8 +36,7 @@ public class SeleniumTestPageObject {
     @Test
     public void testClick () {
         HomePage homePage = new HomePage(driver);
-        homePage.rechercheClick("bordeaux");
-        ResultsPage resultPage = new ResultsPage(driver);
+        ResultsPage resultPage = homePage.rechercheEntree("bordeaux");
         String result = resultPage.getResults(0);
         Assert.assertThat(result, is("Site officiel de la ville de Bordeaux | Bordeaux"));
     }
